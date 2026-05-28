@@ -16,6 +16,8 @@ int main()
         float densidade1, densidade2;
         float perCapita1, perCapita2;
         long double superpoder1, superpoder2;
+        int rpopulacao, rturisticos, rarea, rpib, rdensidade, rperCapita, rsuperpoder;
+
 
 // Entrada de dados para cadastro da primeira carta
         printf("Qual o nome da primeira carta: \n");
@@ -92,10 +94,6 @@ int main()
         printf("Carta Criada: %s\n Estado: %s\n Codigo da Carta: %s\n Cidade: %s\n Populacao: %lu Milhoes de Pessoas\n Area: %.2f Km2\n PIB: %.2f Bilhoes de Reais\n Numero de Pontos Turisticos: %d\n Densidade Populacional: %.3f hab/km2\n PIB per Capita: %.3f reais\n", carta2, estado2, codigocarta2, cidade2, populacao2, area2, pib2, turisticos2, densidade2, perCapita2);
         printf("Super Poder da Carta: %.7Lf\n", superpoder2);
 // Comparação dos super poderes das cartas
-        int rpopulacao, rarea, rpib, rturisticos, rdensidade, rperCapita, rsuperpoder;        
-
-
-
         rpopulacao = populacao1 > populacao2;
         rarea = area1 > area2;
         rpib = pib1 > pib2;
@@ -103,15 +101,15 @@ int main()
         rdensidade = densidade1 > densidade2;
         rperCapita = perCapita1 > perCapita2;
         rsuperpoder = superpoder1 > superpoder2;
-        
+
         printf("Comparacao entre as cartas:\n");
-        printf("Populacao: %s\n", rpopulacao ? "Carta 1 é maior" : "Carta 2 é maior");
-        printf("Area: %s\n", rarea ? "Carta 1 é maior" : "Carta 2 é maior");
-        printf("PIB: %s\n", rpib ? "Carta 1 é maior" : "Carta 2 é maior");
-        printf("Turisticos: %s\n", rturisticos ? "Carta 1 é maior" : "Carta 2 é maior");
-        printf("Densidade Populacional: %s\n", rdensidade ? "Carta 1 é maior" : "Carta 2 é maior");
-        printf("PIB per Capita: %s\n", rperCapita ? "Carta 1 é maior" : "Carta 2 é maior");
-        printf("Super Poder: %s\n", rsuperpoder ? "Carta 1 é maior" : "Carta 2 é maior");
-        
+        printf("Populacao: %d\n", rpopulacao);
+        printf("Area: %d\n", rarea);
+        printf("PIB: %d\n", rpib);
+        printf("Turisticos: %d\n", rturisticos);
+        printf("Densidade Populacional: %d\n", rdensidade);
+        printf("PIB per Capita: %d\n", rperCapita);
+        printf("Super Poder: %d\n", rsuperpoder);
+
         return 0;
 }
