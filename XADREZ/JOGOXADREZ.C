@@ -1,21 +1,31 @@
 #include <stdio.h>
 
+void movimentoTorre() {
+    int torre;
+    for (torre = 0; torre < 5; torre++) {
+        printf("A torre se moveu para a Direita %d x\n", torre + 1);
+    }
+}
+void movimentoBispo() {
+    int bispo;
+    for (bispo = 0; bispo < 5; bispo++) {
+        printf("O bispo se moveu para 'Cima, Direita' %d x\n", bispo + 1);
+    }
+}
+void movimentoRainha() {
+    int rainha;
+    for (rainha = 0; rainha < 8; rainha++) {
+        printf("A rainha se moveu para Esquerda %d x\n", rainha + 1);
+    }
+}
+
 int main() {
 
-int torre, bispo = 0, rainha = 0, cavalo, escolha; 
+int cavalo, escolha;
 
-for (torre = 0; torre < 5; torre++) {
-    printf("A torre se moveu para a Direita %d x\n", torre + 1);
-}
-while (bispo < 5)
-{
-    printf("O bispo se moveu para 'Cima, Direita' %d x\n", bispo + 1);
-    bispo++;
-}
-do
-{   printf("A rainha se moveu para Esquerda %d x\n", rainha + 1);
-    rainha++;
-} while (rainha <= 7);
+movimentoTorre();
+movimentoBispo();
+movimentoRainha();
 
 printf("\n");
 
