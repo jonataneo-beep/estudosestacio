@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-void movimentoTorre() {
-    int torre;
-    for (torre = 0; torre < 5; torre++) {
-        printf("A torre se moveu para a Direita %d x\n", torre + 1);
+void movimentoTorre(int casas) {
+    if (casas > 0) {
+        movimentoTorre(casas - 1);
+        printf("A torre se moveu para a Direita %d x\n", casas);
     }
 }
 void movimentoBispo() {
@@ -21,9 +21,12 @@ void movimentoRainha() {
 
 int main() {
 
-int cavalo, escolha;
+int torre, cavalo, escolha;
 
-movimentoTorre();
+printf("Digite a quantidade de casas que a torre deve se mover para a direita:\n");
+scanf("%d", &torre);
+
+movimentoTorre(torre);
 movimentoBispo();
 movimentoRainha();
 
