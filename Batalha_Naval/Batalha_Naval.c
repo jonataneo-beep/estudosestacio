@@ -22,13 +22,24 @@ int main() {
         }
         printf("\n");
     }
-// Inserir navios no tabuleiro (exemplo)
-    tabuleiro[0][0] = 3; // Navio na posição A1
-    tabuleiro[1][0] = 3; // Navio na posição A2
-    tabuleiro[2][0] = 3; // Navio na posição A3
-    tabuleiro[1][5] = 3; // Navio na posição F2
-    tabuleiro[1][6] = 3; // Navio na posição G2
-    tabuleiro[1][7] = 3; // Navio na posição H2
+// Inserir navios no tabuleiro
+// Navio na vertical (F2, G2, H2)
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[i][5] = 3; // Navio na vertical (F2, G2, H2)
+    }
+// Navio na horizontal (A1, A2, A3)
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[0][i] = 3; // Navio na horizontal (A1, A2, A3)
+    }    
+//Navio na diagonal (A1, B2, C3, D4, E5, F6, G7, H8, I9, J10)    
+    for (int i = 7; i < 10; i++) {
+        tabuleiro[i][i] = 3; // Navio na diagonal (A1, B2, C3, D4, E5, F6, G7, H8, I9, J10)
+    } 
+//Navio na diagonal (A10, B9, C8, D7, E6, F5, G4, H3, I2, J1)    
+    for (int i = 6; i < 9; i++) {
+        tabuleiro[i][9 - i] = 3; // Navio na diagonal (A10, B9, C8, D7, E6, F5, G4, H3, I2, J1)
+    }
+
 
 // Exibir o tabuleiro atualizado
     printf("\nTabuleiro atualizado:\n");
@@ -42,8 +53,9 @@ int main() {
         for (int j = 0; j < 10; j++) {
             printf("%d ", tabuleiro[i-1][j]);
         }
-        printf("\n");
+    printf("\n");
     }
+
 
 
 
