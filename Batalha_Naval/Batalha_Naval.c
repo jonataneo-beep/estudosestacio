@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 #define LINHA 10
 #define COLUNA 10
@@ -7,12 +6,28 @@
 void desenharOctaedro(int tabuleiro[LINHA][COLUNA], int centroLinha, int centroColuna, int raio){
     for (int i = 0; i < LINHA; i++){
         for (int j = 0; j < COLUNA; j++){
-            if (abs(i - centroLinha) + abs(j - centroColuna) <= raio){
+
+            int distLinha;
+            int distColuna;
+
+            if (i > centroLinha)
+                distLinha = i - centroLinha;
+            else
+                distLinha = centroLinha - i;
+            
+            if (j > centroColuna)
+                distColuna = j - centroColuna;
+            else
+                distColuna = centroColuna - j;
+            
+            if (distLinha + distColuna <= raio) {
                 tabuleiro[i][j] = 2;
-            }
+            }     
+
         }
     }
-}
+}        
+
 void desenharCone(int tabuleiro[LINHA][COLUNA], int linhaInicial, int colunaCentral, int altura){
     for (int i = 0; i < LINHA; i++){
         for (int j = 0; j < COLUNA; j++){
